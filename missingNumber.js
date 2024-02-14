@@ -1,8 +1,5 @@
 const missingNumber = (arr) => {
-    var sum = 0
-    for(var a of arr) {
-        sum+=a
-    }
+    let sum = arr.reduce((a, acc) => a+acc, 0)
 
     const hypo_sum = ((arr.length) * (arr.length+1)) / 2
     const result = hypo_sum - sum
