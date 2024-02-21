@@ -10,24 +10,25 @@ const mapLetters = {
 }
 
 var letterCombinations = function(digit) {
-    let len = digit.length, ans = []
+    let len = digit.length
+    let res = []
     if (!len) {
         return []
     }
     
-    const bfs = (pos, str) => {
+    const bfs = (pos, currString) => {
         if (pos === len) {
-            ans.push(str)
+            res.push(currString)
             return
         } 
 
         let letters = mapLetters[digit[pos]]
         for (let i = 0; i < letters.length; i++) {
-            bfs(pos+1,str+letters[i])
+            bfs(pos+1,currString+letters[i])
         }
     }
     bfs(0,"")
-    return ans
+    return res
 };
 
 console.log(letterCombinations('2354'));
