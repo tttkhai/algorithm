@@ -18,6 +18,7 @@ const lcs = (str1, str2) => {
     //     dp[i][j] = Math.max(tmp1, tmp2)
     // }
 
+    
     for(let i = str1.length; i > -1; i--) {
         for(let j = str2.length; j > -1; j--) {
             if(str1[i] === str2[j]) {
