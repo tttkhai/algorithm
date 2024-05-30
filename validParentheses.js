@@ -20,6 +20,7 @@ const isValidParentheses = (arr) => {
     return stack.length === 0;
 }
 
+
 const arr = ['{', '(',')', '}',  '{', '}',  '(', ')']
 const result = isValidParentheses(arr)
 console.log(result);
