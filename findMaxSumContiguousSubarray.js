@@ -15,4 +15,4 @@ const findMaxSumContiguousSubarray = (arr) => {
 let arr = [-2, 3, -4, 2, 1]
 // let arr = [5,4,-1,7,8]
 // let arr = [-2,1,-3,4,-1,2,1,-5,4]
-console.log(findMaxSumContiguousSubarray(arr)); 
+console.log(findMaxSumContiguousSubarray(arr));

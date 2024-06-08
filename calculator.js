@@ -75,5 +75,5 @@ const applyOp = (op, b, a) => {
   return 0
 }
 
-// console.log(calculate('123.2+2*1+3+2/2'))
+console.log(calculate('123.2+2*1+3+2/2'))
 console.log(calculate('4/2+(2+2/2+2)'))
