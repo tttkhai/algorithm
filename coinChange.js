@@ -1,7 +1,7 @@
 // DP - Bottom Up
 // create an array with length same as amount, calculate and fill with way
 // time complexity: O(n^2)
-coins = [1, 2, 5]
+coins = [2, 6, 5]
 amount = 11
 
 var coinChange = function(coins, amount) {
@@ -10,15 +10,16 @@ var coinChange = function(coins, amount) {
 
     dp[0]=0
 
-    if(amount <0 ) return -1;
-    if(amount === 0) return 0;
+    if (amount < 0 ) return -1;
+    if (amount === 0) return 0;
 
     for(let i=1; i<len; i++) {
         for(let j = 0; j < coins.length; j++) {
             if (i >= coins[j]) {
-                dp[i] = Math.min(dp[i], 1 + dp[i - coins[j]]) 
+                dp[i] = Math.min(dp[i], 1 + dp[i - coins[j]])
             }
         }
+        console.log(dp)
     }
 
     return dp[amount] ? dp[amount] : -1

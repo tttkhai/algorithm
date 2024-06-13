@@ -1,42 +1,27 @@
-function longestProfit(data) {
-    var max = 1, len = 1;
-      
-    // traverse the array from the 2nd element
-    for (var i=1; i<n; i++)
-    {
-        // if current element if greater than previous
-        // element, then this element helps in building
-        // up the previous increasing subarray encountered
-        // so far
-        if (arr[i] > arr[i-1])
-            len++;
-        else
-        {
-            // check if 'max' length is less than the length
-            // of the current increasing subarray. If true,
-            // then update 'max'
-            if (max < len)
-            {
-                max = len;
-            }
+// Input: [-1, 9, 0 ,-2, 8 , -5, 6, -24]
+// Output: 3 because longest subsequence is [-1, 0, 8] or [-1, 0, 6]
+function longestProfit(nums) {
+    if (nums.length === 0) {
+        return 0;
+    }
 
-            // reset 'len' to 1 as from this element
-            // again the length of the new increasing
-            // subarray is being calculated   
-            len = 1;   
-        }   
+    const lis = new Array(nums.length).fill(1);
+
+    for (let i = 1; i < nums.length; i++) {
+        console.log(`i ${i}`)
+        for (let j = 0; j < i; j++) {
+            console.log(`i, j ${nums[i]}, ${nums[j]}`)
+            if (nums[i] > nums[j]) {
+                console.log(`lis[i] ${lis[i]}`)
+                console.log(`lis[j] + 1 ${lis[j] + 1}`)
+                lis[i] = Math.max(lis[i], lis[j] + 1);
+            }
+            console.log(lis)
+        }
     }
-      
-    // comparing the length of the last
-    // increasing subarray with 'max'
-    if (max < len)
-    {
-        max = len;
-    }
-     
-    // required maximum length
-    return max;
+
+    return Math.max(...lis);
 }
 
-const num = [-1, 9, 0 ,8 , -5, 6, -24]
+const num = [-1, 9, 0 ,-2, 8 , -5, 6, -24]
 console.log(longestProfit(num))
